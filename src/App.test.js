@@ -1,8 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renderiza correctamente la página de inicio', () => {
+  render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+
+  // Usa un texto que realmente exista en tu navbar, hero o cualquier componente visible
+  const titulo = screen.getByText(/little lemon/i);
+  expect(titulo).toBeInTheDocument();
 });
